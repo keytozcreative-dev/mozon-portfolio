@@ -1,0 +1,106 @@
+/* Aurora — three blurred blobs drifting slowly, nudged by the pointer
+   through --px / --py (set on the parent section). */
+.aurora {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.aurora::after {
+  /* fade the glow into the page */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--c-obsidian) 96%);
+}
+.aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform;
+}
+.aurora__blob--1 {
+  width: 62vw;
+  height: 42vw;
+  top: -24vw;
+  left: 6vw;
+  background: radial-gradient(closest-side, var(--aurora-1), transparent);
+  transform: translate3d(calc(var(--px, 0) * 30px), calc(var(--py, 0) * 20px), 0);
+  animation: aurora-a 22s var(--ease-in-out) infinite alternate;
+}
+.aurora__blob--2 {
+  width: 46vw;
+  height: 34vw;
+  top: -16vw;
+  right: -8vw;
+  background: radial-gradient(closest-side, var(--aurora-2), transparent);
+  transform: translate3d(calc(var(--px, 0) * -40px), calc(var(--py, 0) * 25px), 0);
+  animation: aurora-b 26s var(--ease-in-out) infinite alternate;
+}
+.aurora__blob--3 {
+  width: 50vw;
+  height: 38vw;
+  top: -6vw;
+  left: 30vw;
+  background: radial-gradient(closest-side, var(--aurora-3), transparent);
+  transform: translate3d(calc(var(--px, 0) * 20px), calc(var(--py, 0) * -15px), 0);
+  animation: aurora-c 30s var(--ease-in-out) infinite alternate;
+}
+@keyframes aurora-a {
+  to {
+    translate: 8vw 3vw;
+    scale: 1.12;
+  }
+}
+@keyframes aurora-b {
+  to {
+    translate: -10vw 4vw;
+    scale: 0.9;
+  }
+}
+@keyframes aurora-c {
+  to {
+    translate: -6vw -2vw;
+    scale: 1.18;
+  }
+}
+
+/* Rain — hairlines with a bright head, falling at different speeds. */
+.rain {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, #000 30%, transparent 92%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 92%);
+}
+.rain__line {
+  position: absolute;
+  top: 0;
+  left: var(--x);
+  width: 1px;
+  height: var(--h);
+  background: linear-gradient(to bottom, transparent, rgb(236 230 218 / 0.22) 70%, rgb(230 213 176 / 0.7));
+  transform: translate3d(0, -110%, 0);
+  animation: rain-fall var(--dur) linear var(--delay) infinite;
+}
+.rain__line:nth-child(4n) {
+  background: linear-gradient(to bottom, transparent, rgb(255 90 54 / 0.25) 70%, rgb(255 90 54 / 0.75));
+}
+@keyframes rain-fall {
+  to {
+    transform: translate3d(0, 110vh, 0);
+  }
+}
+
+/* Static fallback for reduced motion: faint, evenly faded lines. */
+@media (prefers-reduced-motion: reduce) {
+  .rain__line {
+    animation: none;
+    transform: translate3d(0, calc(var(--h) * 1.5), 0);
+    opacity: 0.5;
+  }
+}

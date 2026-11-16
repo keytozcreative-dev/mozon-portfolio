@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Mozon Salaheldin — Full-Stack Developer, Graphic &amp; Brand Designer</title>
+    <meta name="description" content="Mozon Salaheldin is a multidisciplinary creative working at the intersection of technology, visual communication and digital experiences — full-stack development, graphic design and brand identity." />
+    <meta name="author" content="Mozon Salaheldin" />
+    <meta name="theme-color" content="#08080A" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mozon Salaheldin" />
+    <meta property="og:title" content="Mozon Salaheldin — I build. I design. I create." />
+    <meta property="og:description" content="Full-Stack Developer, Creative Graphic Designer and Brand Designer — turning ideas into digital experiences." />
+    <meta property="og:image" content="./og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+    <!-- Tip: once deployed, replace ./og-image.png with the absolute URL
+         (e.g. https://yourname.github.io/portfolio/og-image.png) so every
+         social platform can resolve it. -->
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mozon Salaheldin — I build. I design. I create." />
+    <meta name="twitter:description" content="Full-Stack Developer, Creative Graphic Designer and Brand Designer." />
+    <meta name="twitter:image" content="./og-image.png" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+
+    <!-- Fonts: Latin + Arabic pairs. Google Fonts serves unicode-range subsets,
+         so Arabic font files only download when Arabic text is on screen. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@200;300;400;500&display=swap"
+    />
+
+    <!-- Apply the saved language before first paint (no LTR→RTL flash). -->
+    <script>
+      (function () {
+        try {
+          var l = localStorage.getItem('mozon.lang');
+          if (l === 'ar') {
+            document.documentElement.lang = 'ar';
+            document.documentElement.dir = 'rtl';
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mozon Salaheldin",
+        "jobTitle": ["Full-Stack Developer", "Creative Graphic Designer", "Brand Designer"],
+        "knowsAbout": ["Web Development", "React", "Node.js", "Brand Identity Design", "Graphic Design", "Motion Graphics", "UI/UX Design"]
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p style="padding:2rem;font-family:sans-serif;color:#ECE6DA;background:#08080A">
+        Mozon Salaheldin — Full-Stack Developer, Creative Graphic Designer &amp; Brand Designer.
+        Please enable JavaScript to view this portfolio.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "mozon-portfolio-contact-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Optional Express API for the portfolio contact form. The website runs without it.",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch --env-file-if-exists=.env index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

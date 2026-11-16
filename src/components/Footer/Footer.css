@@ -1,0 +1,96 @@
+.footer {
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--c-line);
+  overflow: hidden;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr);
+  gap: 2rem;
+  align-items: start;
+}
+.footer__statement {
+  font-family: var(--ff-accent);
+  font-style: var(--accent-style);
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: var(--c-champagne-2);
+  max-width: 18ch;
+}
+.footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  color: var(--c-silver);
+}
+.footer__nav a:hover {
+  color: var(--c-paper);
+}
+.footer__mail {
+  justify-self: end;
+  color: var(--c-silver);
+}
+
+/* Oversized wordmark — the full width of the page */
+.footer__mark {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-block: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+  font-family: var(--ff-accent);
+  font-style: var(--accent-style);
+  font-size: clamp(6rem, 27vw, 26rem);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  color: transparent;
+  background: linear-gradient(180deg, var(--c-paper) 10%, rgb(236 230 218 / 0.08) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  user-select: none;
+}
+:root[lang='ar'] .footer__mark {
+  font-size: clamp(6rem, 30vw, 28rem);
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.footer__mark-dot {
+  width: 0.09em;
+  height: 0.09em;
+  margin-inline-start: 0.04em;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--c-line);
+  font-size: 0.82rem;
+  color: var(--c-mute);
+}
+.footer__top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--c-silver);
+}
+.footer__top-link:hover .icon-btn {
+  background: var(--c-paper);
+  border-color: var(--c-paper);
+  color: var(--c-obsidian);
+}
+
+@media (max-width: 860px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+  }
+  .footer__mail {
+    justify-self: start;
+  }
+}

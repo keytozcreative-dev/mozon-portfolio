@@ -1,0 +1,110 @@
+/* ==================================================================
+   MOTION — scroll reveals & shared keyframes.
+   Everything is opt-in via [data-reveal] and disabled for users who
+   prefer reduced motion (they get the final, static state).
+   ================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity var(--dur-slow) var(--ease-out),
+      transform var(--dur-slow) var(--ease-out);
+    transition-delay: calc(var(--d, 0) * 1ms);
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Line mask reveal: text slides up from behind its own baseline. */
+  [data-reveal='mask'] {
+    opacity: 1;
+    transform: none;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+  }
+  :root[lang='ar'] [data-reveal='mask'] {
+    padding-block: 0.12em 0.2em;
+    margin-block: -0.12em -0.2em;
+  }
+  [data-reveal='mask'] > .mask-inner {
+    display: inline-block;
+    transform: translate3d(0, 108%, 0);
+    transition: transform 1.2s var(--ease-out);
+    transition-delay: calc(var(--d, 0) * 1ms);
+  }
+  [data-reveal='mask'].is-visible > .mask-inner {
+    transform: none;
+  }
+
+  /* Word-by-word reveal (never split Arabic into letters). */
+  [data-reveal='words'] {
+    opacity: 1;
+    transform: none;
+  }
+  [data-reveal='words'] .w {
+    display: inline-block;
+    opacity: 0.12;
+    filter: blur(6px);
+    transform: translate3d(0, 0.3em, 0);
+    transition:
+      opacity 0.9s var(--ease-out),
+      filter 0.9s var(--ease-out),
+      transform 0.9s var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 28ms);
+  }
+  [data-reveal='words'].is-visible .w {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  /* Hairline draws itself */
+  [data-reveal='line'] {
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 1.4s var(--ease-out);
+    transition-delay: calc(var(--d, 0) * 1ms);
+  }
+  :root[dir='rtl'] [data-reveal='line'] {
+    transform-origin: right center;
+  }
+  [data-reveal='line'].is-visible {
+    transform: none;
+  }
+}
+
+/* Words stay inline-block (keeps spacing identical) even without motion */
+[data-reveal='words'] .w {
+  display: inline-block;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

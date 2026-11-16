@@ -1,0 +1,171 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+/* Name note — the "muzn" story, in a quiet glass card */
+.about__aside {
+  position: relative;
+}
+.about__note {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-l);
+  background: linear-gradient(160deg, rgb(236 230 218 / 0.045), rgb(236 230 218 / 0.01));
+}
+.about__cloud {
+  width: 76px;
+  fill: none;
+  stroke: var(--c-champagne);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+.about__drop {
+  stroke: var(--c-accent);
+  stroke-dasharray: 3 5;
+  animation: drizzle 1.6s linear infinite;
+}
+@keyframes drizzle {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+.about__term {
+  font-family: var(--ff-accent);
+  font-style: var(--accent-style);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--c-champagne-2);
+}
+.about__note-text {
+  font-size: var(--fs-small);
+  color: var(--c-silver);
+}
+
+/* Lead — oversized, revealed word by word */
+.about__lead {
+  font-family: var(--ff-display);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-lead);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  max-width: 30ch;
+  text-wrap: pretty;
+}
+:root[lang='ar'] .about__lead {
+  line-height: 1.85;
+  letter-spacing: 0;
+  max-width: 34ch;
+}
+
+.about__rule {
+  margin-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.about__cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+.about__p {
+  color: var(--c-silver);
+}
+.about__p .highlight {
+  background: none;
+  padding: 0;
+}
+.about__p-num {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-micro);
+  color: var(--c-champagne);
+}
+
+/* Pull quote */
+.about__quote {
+  position: relative;
+  margin-top: clamp(4rem, 9vw, 8rem);
+  padding-inline-start: clamp(2.5rem, 7vw, 6rem);
+}
+.about__qmark {
+  position: absolute;
+  inset-inline-start: 0;
+  top: -0.25em;
+  font-family: var(--ff-accent-en);
+  font-size: clamp(5rem, 11vw, 9rem);
+  line-height: 1;
+  color: var(--c-accent);
+}
+:root[dir='rtl'] .about__qmark {
+  transform: scaleX(-1);
+}
+.about__quote blockquote p {
+  font-family: var(--ff-display);
+  font-weight: var(--fw-light);
+  font-size: clamp(1.5rem, 3.1vw, 2.75rem);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+:root[lang='ar'] .about__quote blockquote p {
+  line-height: 1.8;
+  letter-spacing: 0;
+  font-size: clamp(1.35rem, 2.7vw, 2.4rem);
+}
+.about__quote figcaption {
+  margin-top: 1.6rem;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+}
+:root[lang='ar'] .about__quote figcaption {
+  font-family: var(--ff-accent);
+  font-size: 1.1rem;
+  letter-spacing: 0;
+}
+
+@media (max-width: 1024px) {
+  .about__cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about__cols .about__p:last-child {
+    grid-column: 1 / -1;
+    max-width: 60ch;
+  }
+}
+
+@media (max-width: 860px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+  .about__aside {
+    order: 2;
+  }
+  .about__note {
+    position: static;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 1.2rem;
+  }
+  .about__cloud {
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .about__cols {
+    grid-template-columns: 1fr;
+  }
+  .about__quote {
+    padding-inline-start: 0;
+    padding-top: 3.5rem;
+  }
+}

@@ -1,0 +1,114 @@
+/* ==================================================================
+   DESIGN TOKENS
+   Change the palette, type and spacing of the whole site from here.
+   ================================================================== */
+
+:root {
+  /* ── Palette ─────────────────────────────────────────────────── */
+  --c-obsidian: #08080a;        /* page background                     */
+  --c-ink: #0e0e11;             /* raised background                   */
+  --c-charcoal: #16161a;        /* cards, panels                       */
+  --c-graphite: #232329;        /* hover surfaces                      */
+  --c-paper: #ece6da;           /* warm off-white — primary text       */
+  --c-silver: #a3a3a8;          /* secondary text                      */
+  --c-mute: #8b8b93;            /* tertiary text (≥4.5:1 on obsidian)  */
+  --c-champagne: #cdb68b;       /* soft metallic accent                */
+  --c-champagne-2: #e6d5b0;     /* champagne highlight                 */
+  --c-accent: #ff5a36;          /* Desert Ember — the signature accent */
+
+  /* Derived (edit the base colours above, these follow) */
+  --c-line: rgb(236 230 218 / 0.1);
+  --c-line-strong: rgb(236 230 218 / 0.2);
+  --c-glass: rgb(236 230 218 / 0.03);
+  --c-champagne-soft: rgb(205 182 139 / 0.14);
+  --c-accent-soft: rgb(255 90 54 / 0.16);
+  --c-success: #9fcf9a;
+  --c-danger: #ff8a73;
+
+  /* Aurora glow (hero & contact) — kept muted on purpose */
+  --aurora-1: rgb(205 182 139 / 0.55);
+  --aurora-2: rgb(255 90 54 / 0.42);
+  --aurora-3: rgb(88 70 160 / 0.5);
+
+  /* ── Typography ──────────────────────────────────────────────── */
+  --ff-display-en: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+  --ff-accent-en: 'Instrument Serif', 'Times New Roman', serif;
+  --ff-body-en: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+  --ff-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --ff-display-ar: 'Noto Kufi Arabic', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
+  --ff-accent-ar: 'Amiri', 'Times New Roman', serif;
+  --ff-body-ar: 'IBM Plex Sans Arabic', 'Noto Kufi Arabic', Tahoma, sans-serif;
+
+  /* Active set (switched by language below) */
+  --ff-display: var(--ff-display-en);
+  --ff-accent: var(--ff-accent-en);
+  --ff-body: var(--ff-body-en);
+  --accent-style: italic;
+
+  /* Fluid type scale */
+  --fs-mega: clamp(3.4rem, 11.5vw, 11.5rem);
+  --fs-h1: clamp(2.6rem, 7vw, 6.4rem);
+  --fs-h2: clamp(2.1rem, 5vw, 4.4rem);
+  --fs-h3: clamp(1.45rem, 2.4vw, 2.1rem);
+  --fs-lead: clamp(1.25rem, 2.2vw, 1.9rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.0625rem);
+  --fs-small: 0.875rem;
+  --fs-micro: 0.72rem;
+
+  --lh-tight: 0.92;
+  --lh-heading: 1.02;
+  --lh-body: 1.65;
+  --ls-display: -0.035em;
+  --ls-heading: -0.025em;
+  --ls-label: 0.16em;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  /* ── Space & layout ──────────────────────────────────────────── */
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section-y: clamp(6rem, 14vw, 12rem);
+  --max-w: 1440px;
+  --nav-h: 76px;
+  --radius-s: 6px;
+  --radius-m: 14px;
+  --radius-l: 22px;
+  --radius-pill: 999px;
+
+  /* ── Motion ──────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);       /* expo-out, calm landings */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --dur-fast: 220ms;
+  --dur-base: 520ms;
+  --dur-slow: 1100ms;
+
+  --z-cursor: 100;
+  --z-loader: 90;
+  --z-veil: 80;
+  --z-modal: 60;
+  --z-nav: 50;
+}
+
+/* ── Arabic: its own typographic system, not a mirror ─────────────── */
+:root[lang='ar'] {
+  --ff-display: var(--ff-display-ar);
+  --ff-accent: var(--ff-accent-ar);
+  --ff-body: var(--ff-body-ar);
+  --accent-style: normal;           /* Arabic has no true italic */
+
+  --fs-mega: clamp(3rem, 10vw, 9.6rem);
+  --fs-h1: clamp(2.3rem, 6vw, 5.4rem);
+  --fs-h2: clamp(1.9rem, 4.3vw, 3.8rem);
+  --fs-lead: clamp(1.2rem, 2vw, 1.75rem);
+  --fs-body: clamp(1.02rem, 1.1vw, 1.1rem);
+
+  --lh-tight: 1.28;                 /* room for ascenders, dots & marks */
+  --lh-heading: 1.4;
+  --lh-body: 1.95;
+  --ls-display: 0;                  /* never track Arabic — it breaks joins */
+  --ls-heading: 0;
+  --ls-label: 0;
+}
