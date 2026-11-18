@@ -92,25 +92,21 @@ export const projects = {
      {
     id: 1,
     title: 'Motion 1',
-    image: '/images/projects/motion-graphics/1.jpg',
     video: '/images/projects/motion-graphics/1.mp4',
   },
   {
     id: 2,
     title: 'Motion 2',
-    image: '/images/projects/motion-graphics/2.jpg',
     video: '/images/projects/motion-graphics/2.mp4',
   },
   {
     id: 3,
     title: 'Motion 3',
-    image: '/images/projects/motion-graphics/3.jpg',
     video: '/images/projects/motion-graphics/3.mp4',
   },
   {
-    id: 2,
+    id: 4,
     title: 'Motion 4',
-    image: '/images/projects/motion-graphics/4.jpg',
     video: '/images/projects/motion-graphics/4.mp4',
   },
 
