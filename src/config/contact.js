@@ -6,13 +6,13 @@
  */
 export const contact = {
   /** Shown prominently in the Contact section and used for mailto links. */
-  email: 'hello@example.com',
+  email: 'mouzon9786@gmail.com',
 
   /**
    * WhatsApp number in international format. Spaces, dashes and the "+"
    * are allowed — they are stripped automatically for the wa.me link.
    */
-  whatsapp: '+000000000000',
+  whatsapp: '+249-112-668-116',
 
   /** Optional pre-filled WhatsApp message, per language. */
   whatsappMessage: {
@@ -34,7 +34,7 @@ export const contact = {
    *
    * You can also set it at build time with VITE_CONTACT_ENDPOINT in `.env`.
    */
-  formEndpoint: import.meta.env?.VITE_CONTACT_ENDPOINT || '',
+  formEndpoint: import.meta.env?.VITE_CONTACT_ENDPOINT || 'https://formspree.io/f/mjywwjkj',
 
   /**
    * Social profiles. Intentionally empty — add only real accounts.

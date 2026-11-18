@@ -118,10 +118,6 @@ export default function ProjectCard({ entry, index, category, labels, onOpen, ta
           e.preventDefault();
           onOpen(category.key, entry.id);
         }}
-        onPointerEnter={(e) => e.pointerType === 'mouse' && play()}
-        onPointerLeave={stop}
-        onFocus={play}
-        onBlur={stop}
         draggable={false}
       >
         <div className="card__media">
@@ -148,7 +144,8 @@ export default function ProjectCard({ entry, index, category, labels, onOpen, ta
               muted
               loop
               playsInline
-              preload="none"
+              autoPlay
+              preload="auto"
               aria-hidden="true"
             />
           )}

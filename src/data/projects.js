@@ -64,9 +64,59 @@
  * ==================================================================
  */
 export const projects = {
-  websites: [],
-  socialMedia: [],
-  logos: [],
-  branding: [],
-  motionGraphics: [],
+  websites: [
+     { id: 1, title: 'website 1', image: '/images/projects/websites/1.jpg' },
+     { id: 2, title: 'website 2', image: '/images/projects/websites/2.jpg' },
+     { id: 3, title: 'website 3', image: '/images/projects/websites/3.jpg' },
+
+
+  ],
+  socialMedia: [
+     { id: 1, title: 'social media 1', image: '/images/projects/social-media/1.jpg' },
+     { id: 2, title: 'social media 2', image: '/images/projects/social-media/2.jpg' },
+     { id: 3, title: 'social media 3', image: '/images/projects/social-media/3.jpg' },
+  ],
+  logos: [
+     { id: 1, title: 'Logo 1', image: '/images/projects/logos/1.jpg' },
+     { id: 2, title: 'Logo 2', image: '/images/projects/logos/2.jpg' },
+     { id: 3, title: 'Logo 3', image: '/images/projects/logos/3.jpg' },
+
+  ],
+  branding: [
+     { id: 1, title: 'identity 1', image: '/images/projects/branding/1.jpg' },
+     { id: 2, title: 'identity 2', image: '/images/projects/branding/2.jpg' },
+     { id: 3, title: 'identity 3', image: '/images/projects/branding/3.jpg' },
+
+  ],
+  motionGraphics: [
+     {
+    id: 1,
+    title: 'Motion 1',
+    image: '/images/projects/motion-graphics/1.jpg',
+    video: '/images/projects/motion-graphics/1.mp4',
+  },
+  {
+    id: 2,
+    title: 'Motion 2',
+    image: '/images/projects/motion-graphics/2.jpg',
+    video: '/images/projects/motion-graphics/2.mp4',
+  },
+  {
+    id: 3,
+    title: 'Motion 3',
+    image: '/images/projects/motion-graphics/3.jpg',
+    video: '/images/projects/motion-graphics/3.mp4',
+  },
+  {
+    id: 2,
+    title: 'Motion 4',
+    image: '/images/projects/motion-graphics/4.jpg',
+    video: '/images/projects/motion-graphics/4.mp4',
+  },
+
+
+
+
+
+  ],
 };

@@ -388,3 +388,16 @@
     width: min(var(--card-w), 78vw);
   }
 }
+/* Project cards: show only the picture */
+.card:not(.card--empty) .card__num,
+.card:not(.card--empty) .card__tag,
+.card:not(.card--empty) .card__caption,
+.card:not(.card--empty) .card__cta,
+.card:not(.card--empty) .card__veil {
+  display: none;
+}
+
+/* Motion cards: video always visible */
+.card__video {
+  opacity: 1;
+}
